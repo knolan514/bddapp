@@ -1,0 +1,36 @@
+<div id="make" style="background-color: <%=@car.color%>;">
+<h2>Make: <%=@car.make%><h2>
+</div>
+<br>
+Model: <%=@car.model%>
+<br>
+Year: <%=@car.year%>
+<br>
+Speed: <%=@car.speed%>mph
+
+<form action="accelerate" method="get">
+  <input type="submit" name="accelerate" value="Accelerate">
+</form>
+
+<form action="brake" method="get">
+  <input type="submit" name="brake" value="Brake">
+</form>
+
+Lights: <%=@car.lights_on%>
+
+<form action="lights" method="get">
+  <input type="submit" name="lights" value="Lights">
+</form>
+
+<!-- the action in form is the method in the controller -->
+
+  <h2>Parking Brake: <%=@car.parking_brake%></h2>
+  <form action="parking_brake" method="get">
+  <label>Set</label>
+  <%=radio_button_tag 'set_release', 'set'%>
+  <!-- # => <input id="set_release_set" name="set_release" type="radio" value="set" /> -->
+  <label>Release</label>
+  <%=radio_button_tag 'set_release', 'release'%>
+  <!-- # => <input id="set_release_set" name="set_release" type="radio" value="release" /> -->
+  <input type="submit" value="Change Brake">
+</form>
